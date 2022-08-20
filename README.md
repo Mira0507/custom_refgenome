@@ -1,9 +1,11 @@
 # Building custom reference genome for single cell RNA-seq analysis using `cellranger`
 
-2022-08-19
+2022-08-19     
 Mira Sohn
 
-This workflow demonstrates how to build custom reference genome for analyzing expression of the human transgene p53-R280K in transgenic mice. It will be slightly modified from the guide [Creating a Reference Package with cellranger mkref](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/advanced/references) provided by 10X genomics. Here, description about about how to install `cellranger` will be skipped. Visit [Cell Ranger Installation](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/installation) if you need to install the software.
+This workflow demonstrates how to build custom reference genome for analyzing expression of the human transgene p53-R280K in transgenic mice. p53 (TP53) is a tumor suppressor gene having 80% identical cDNA sequences between human and mouse. This approach started from a question whether it's possible to distinguish human transgene p53 and mouse endogenous p53 in a scRNA-seq analysis.
+
+This workflow will be a slightly modified version of the guide [Creating a Reference Package with cellranger mkref](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/advanced/references) provided by 10X genomics. Here, description about about how to install `cellranger` will be skipped. Visit [Cell Ranger Installation](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/installation) if you need to install the software.
 
 
 Due to the fact that `cellranger` utilizes [`STAR`](https://github.com/alexdobin/STAR) to build reference index files and align reads to reference genome, genome fasta and annotation GTF files are needed as input, which is identical to what `STAR --runMode genomeGenerate` requires.
@@ -114,7 +116,7 @@ genes.gtf  genome.fa  refdata-gex-mm10-2020-A  refdata-gex-mm10-2020-A.tar.gz
 ```
 
 
-Explore what the GTF file looks like.
+Explore what the GTF file looks like. Details about GTF file format are introduced by the page [GFF/GTF File Format - Definition and supported options](https://useast.ensembl.org/info/website/upload/gff.html).
 
 ```bash
 
